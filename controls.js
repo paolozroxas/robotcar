@@ -17,19 +17,15 @@ process.stdin.on('keypress', (ch, key) => {
   if (key) {
     switch(key.name) {
       case 'up':
-        console.log('up');
         moveForward();
         break;
       case 'left':
-          console.log('left');
         turnLeft();
         break;
       case 'right':
-          console.log('right');
         turnRight();
         break;
       case 'down':
-          console.log('down');
         moveBackward();
         break;
     }
@@ -40,21 +36,41 @@ process.stdin.setRawMode(true);
 process.stdin.resume();
 
 const moveForward = () => {
+  console.log('forward');
+
+  leftTrackBackward.write(Gpio.LOW);
+  rightTrackBackward.write(Gpio.LOW);
+
   leftTrackForward.write(Gpio.HIGH);
   rightTrackForward.write(Gpio.HIGH);
 }
 
 const turnRight = () => {
+  console.log('right');
+
+  leftTrackBackward.write(Gpio.LOW);
+  rightTrackForward.write(Gpio.LOW);
+  
   leftTrackForward.write(Gpio.HIGH);
   rightTrackBackward.write(Gpio.HIGH);
 }
 
 const turnLeft = () => {
+  console.log('left');
+
+  leftTrackForward.write(Gpio.LOW);
+  rightTrackBackward.write(Gpio.LOW);
+
   leftTrackBackward.write(Gpio.HIGH);
   rightTrackForward.write(Gpio.HIGH);
 }
 
 const moveBackward = () => {
+  console.log('backward');
+  
+  leftTrackForward.write(Gpio.LOW);
+  rightTrackForward.write(Gpio.LOW);
+
   leftTrackBackward.write(Gpio.HIGH);
   rightTrackBackward.write(Gpio.HIGH);
 }
