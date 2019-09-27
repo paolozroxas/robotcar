@@ -17,15 +17,19 @@ process.stdin.on('keypress', (ch, key) => {
   if (key) {
     switch(key.name) {
       case 'up':
+        console.log('up');
         moveForward();
         break;
       case 'left':
+          console.log('left');
         turnLeft();
         break;
       case 'right':
+          console.log('right');
         turnRight();
         break;
       case 'down':
+          console.log('down');
         moveBackward();
         break;
     }
