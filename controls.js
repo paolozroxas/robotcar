@@ -13,7 +13,7 @@ process.stdin.on('keypress', (ch, key) => {
     process.stdin.pause();
     return;
   }
-
+  
   if (key) {
     switch(key.name) {
       case 'up':
@@ -27,6 +27,9 @@ process.stdin.on('keypress', (ch, key) => {
         break;
       case 'down':
         moveBackward();
+        break;
+      case 'space':
+        stop();
         break;
     }
   }
@@ -67,10 +70,19 @@ const turnLeft = () => {
 
 const moveBackward = () => {
   console.log('backward');
-  
+
   leftTrackForward.write(Gpio.LOW);
   rightTrackForward.write(Gpio.LOW);
 
   leftTrackBackward.write(Gpio.HIGH);
   rightTrackBackward.write(Gpio.HIGH);
+}
+
+const stop = () => {
+  console.log('stop');
+  
+  leftTrackBackward.write(Gpio.LOW);
+  rightTrackBackward.write(Gpio.LOW);
+  leftTrackForward.write(Gpio.LOW);
+  rightTrackForward.write(Gpio.LOW);
 }
