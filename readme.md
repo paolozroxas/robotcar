@@ -8,7 +8,8 @@ Control a raspberry pi robot car over wifi, with video streaming
 - run npm install
 
 ## Instructions
-- ssh into the raspberry pi
+- ssh into the raspberry pi with `ssh pi@raspberrypi.local`
+- if necessary, password can be changed with `sudo passwd pi`
 - clone into this repo
 - run stream-server.sh
 - this starts a multicast UDP stream
