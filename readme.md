@@ -10,3 +10,10 @@ Control a raspberry pi robot car over wifi, with video streaming
 - live video should now be streaming
 - back in the raspberry pi ssh shell, run `node controls.js`
 - this will allow you to control the car
+
+## Initial setup
+- on the raspberry pi
+- `sudo apt update && sudo apt upgrade -y`
+- `sudo apt install rpicam-apps`
+- install nvm and node
+- run npm install
