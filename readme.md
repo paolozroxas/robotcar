@@ -12,7 +12,8 @@ Control a raspberry pi robot car over wifi, with video streaming
 - clone into this repo
 - run stream-server.sh
 - this starts a multicast UDP stream
-- on your computer, run connect-to-stream.sh
+- on your computer, clone repo
+- run connect-to-stream.sh
 - live video should now be streaming
 - back in the raspberry pi ssh shell, run `node controls.js`
 - this will allow you to control the car
