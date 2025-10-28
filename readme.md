@@ -11,6 +11,11 @@ Control a raspberry pi robot car over wifi, with video streaming
 - back in the raspberry pi ssh shell, run `node controls.js`
 - this will allow you to control the car
 
+## Old Instructions
+- if you have an old raspberry pi OS
+- run stream-server-old.sh
+- on your computer, use VLC open network stream: http://<pi_ip>:8080
+
 ## Initial setup
 - on the raspberry pi
 - `sudo apt update && sudo apt upgrade -y`
