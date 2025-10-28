@@ -1,7 +1,24 @@
 ## Description
 Control a raspberry pi robot car over wifi, with video streaming
 
+## Initial setup
+- on the raspberry pi
+- `sudo apt update && sudo apt upgrade -y`
+- `sudo apt install rpicam-apps`
+- install nvm and node
+- run npm install
+
 ## Instructions
+- ssh into the raspberry pi
+- clone into this repo
+- run stream-server.sh
+- this starts a multicast UDP stream
+- on your computer, use VLC open network stream: udp://@239.255.42.42:5000
+- live video should now be streaming
+- back in the raspberry pi ssh shell, run `node controls.js`
+- this will allow you to control the car
+
+## Instructions Beta (not verified yet)
 - ssh into the raspberry pi
 - clone into this repo
 - run stream-server.sh
@@ -11,14 +28,4 @@ Control a raspberry pi robot car over wifi, with video streaming
 - back in the raspberry pi ssh shell, run `node controls.js`
 - this will allow you to control the car
 
-## Old Instructions
-- if you have an old raspberry pi OS
-- run stream-server-old.sh
-- on your computer, use VLC open network stream: http://<pi_ip>:8080
 
-## Initial setup
-- on the raspberry pi
-- `sudo apt update && sudo apt upgrade -y`
-- `sudo apt install rpicam-apps`
-- install nvm and node
-- run npm install
