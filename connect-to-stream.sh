@@ -1,3 +1,3 @@
-gst-launch-1.0 -v udpsrc address=239.255.42.42 port=5000 auto-multicast=true \
-caps="application/x-rtp,encoding-name=H264,payload=96" \
+gst-launch-1.0 -v udpsrc port=5000 \
+caps="application/x-rtp, media=(string)video, encoding-name=(string)H264, payload=(int)96" \
 ! rtph264depay ! avdec_h264 ! videoconvert ! autovideosink sync=false
