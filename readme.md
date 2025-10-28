@@ -1,0 +1,12 @@
+## Description
+Control a raspberry pi robot car over wifi, with video streaming
+
+## Instructions
+- ssh into the raspberry pi
+- clone into this repo
+- run stream-server.sh
+- on your computer, use VLC open network stream: rtsp://<raspberry_pi_ip>:8554
+- get the raspberry pi IP with `hostname -I`
+- live video should now be streaming
+- back in the raspberry pi ssh shell, run `node controls.js`
+- this will allow you to control the car
